@@ -1,0 +1,12 @@
+Throttler
+It is a rate limiting functionality which allows you to restrict the user from making too many requests, it has a ttl (time to live ) in ms which specifies the expiry time and another option of request which allows no of requests in ttl it is used in modules while APP_GUARD and class Throttler are used in services
+skip Throttle can use for skipping the rate limitation applied(if any) but can adjust it in our own way like some api may want to limit the requests for that we can use default as false as default is true in skip throttle
+
+
+logger 
+used for logging erros, warnings or maybe number of requests made by the user etc, we can make our own logger by implementing the logger class and overriding the methods with our own custom messages
+
+
+middleware vs auth guards
+middlewares are dumb , they donot know which handler will execute after calling next() while auth guards have access to the execution context which knows wht to execute next
+guards are executed after all middlewares  but before interceptors and pipes
